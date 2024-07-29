@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: qa-nginx-deployment
+  labels:
+    app: qa-nginx
+spec:
+  selector:
+    matchLabels:
+      app: qa-nginx
+  template:
+    metadata:
+      labels:
+        app: qa-nginx
+    spec:
+      containers:
+        - name: qa-nginx
+          image: qa-nginx:latest
+          imagePullPolicy: Never
+          ports:
+            - containerPort: 7800
+          resources:
+            requests:
+              cpu: 100m
+            limits:
+              cpu: 200m

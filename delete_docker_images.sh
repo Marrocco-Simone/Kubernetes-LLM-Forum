@@ -1,0 +1,1 @@
+docker image rm --force qa-api qa-api-prod qa-ui qa-ui-prod llm-api e2e-playwright
